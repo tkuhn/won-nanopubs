@@ -1,0 +1,28 @@
+@prefix this: <http://purl.org/np/RAf6S6lmX2FUKA6Vli6r8e-FamlM4tTgLmQDfUczP7od8> .
+@prefix sub: <http://purl.org/np/RAf6S6lmX2FUKA6Vli6r8e-FamlM4tTgLmQDfUczP7od8#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix ex: <http://example.org/> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	<http://purl.org/np/RAcESpvWb257SxrqSaeA9il2SC6xmHS5SRJwYS6uvtEHM> ex:isSignedBy this: .
+}
+
+sub:provenance {
+	sub:assertion a ex:SignatureAssertion .
+}
+
+sub:pubinfo {
+	sub:signature.MCwCFG6q3dXuAQPC npx:hasPublicKey "MIIBtzCCASwGByqGSM44BAEwggEfAoGBAP1/U4EddRIpUt9KnC7s5Of2EbdSPO9EAMMeP4C2USZpRV1AIlH7WT2NWPq/xfW6MPbLm1Vs14E7gB00b/JmYLdrmVClpJ+f6AR7ECLCT7up1/63xhv4O1fnxqimFQ8E+4P208UewwI1VBNaFpEy9nXzrith1yrv8iIDGZ3RSAHHAhUAl2BQjxUjC8yykrmCouuEC/BYHPUCgYEA9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdRWVeOutRZT+ZxBxCBgLRJFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx+2J6ASQ7zKTxvqhRkImog9/hWuWfBpKLZl6Ae1UlZAFMO/7PSSoDgYQAAoGAEHvFRpU7ryp1gAOi2yoy2VX8jraJdwPo6ZC1idtsGVcmou89Y3KOoJmlW3VU8ZPolpVWuM+EPNmLNFmifYr+svu8AOQkilZBLdkS5BrPVxIpV0dLeaBUroof1wPsVuwEPOdNzWsEmPF1Az8qLGEdPbyn7ehWqO/lNVmW8+c4O2k=" ;
+		npx:hasSignature "MCwCFG6q3dXuAQPC+Fr0p2yt24ystVMiAhRv/05EgBmcRSp9tmZ/h3IYtFGAkA==" .
+	
+	this: npx:hasSignatureElement sub:signature.MCwCFG6q3dXuAQPC ;
+		a ex:SignatureNanopub .
+}

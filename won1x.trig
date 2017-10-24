@@ -1,0 +1,29 @@
+@prefix : <http://purl.org/np/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix msg: <http://purl.org/webofneeds/message#> .
+@prefix conn: <https://node.matchat.org/won/resource/connection/> .
+@prefix need: <https://node.matchat.org/won/resource/need/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix won: <http://purl.org/webofneeds/model#> .
+@prefix event: <https://node.matchat.org/won/resource/event/> .
+@prefix ex: <http://example.org/> .
+
+:Head {
+	: np:hasAssertion :assertion ;
+		np:hasProvenance :provenance ;
+		np:hasPublicationInfo :pubinfo ;
+		a np:Nanopublication .
+}
+
+:assertion {
+	 <http://purl.org/np/RAcESpvWb257SxrqSaeA9il2SC6xmHS5SRJwYS6uvtEHM> ex:isSignedBy : .
+}
+
+:provenance {
+   :assertion a ex:SignatureAssertion .
+}
+
+:pubinfo {
+    : a ex:SignatureNanopub .
+}
+
