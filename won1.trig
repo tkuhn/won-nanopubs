@@ -1,0 +1,44 @@
+@prefix : <http://purl.org/nanopub/temp/6899585108127291000> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix msg: <http://purl.org/webofneeds/message#> .
+@prefix conn: <https://node.matchat.org/won/resource/connection/> .
+@prefix need: <https://node.matchat.org/won/resource/need/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix won: <http://purl.org/webofneeds/model#> .
+@prefix event: <https://node.matchat.org/won/resource/event/> .
+
+:Head {
+	: np:hasAssertion :assertion ;
+		np:hasProvenance :provenance ;
+		np:hasPublicationInfo :pubinfo ;
+		a np:Nanopublication .
+}
+
+:assertion {
+	 event:6899585108127291000
+won:hasTextMessage "eigentlich können wir jetzt auch links zu needs auf twitter posten" .
+}
+
+:provenance {
+   :assertion
+            a                         msg:FromOwner ;
+            msg:hasCorrespondingRemoteMessage
+                    event:xfj622u3gjoii9uqffmq ;
+            msg:hasPreviousMessage    event:z7od6rg2iwhy470tdlps ;
+            msg:hasReceivedTimestamp  "1508511850074"^^xsd:long ;
+msg:protocolVersion "1.0" .
+}
+
+:pubinfo {
+    :
+            a                     msg:FromOwner ;
+            msg:hasMessageType    msg:ConnectionMessage ;
+            msg:hasReceiver       conn:tkxd62psh2jkl1lloa6k ;
+            msg:hasReceiverNeed   need:1319679880993162200 ;
+            msg:hasReceiverNode   <https://node.matchat.org/won/resource> ;
+            msg:hasSender         conn:h2umbn3tuh06stbnfaim ;
+            msg:hasSenderNeed     need:8929366644928455000 ;
+            msg:hasSenderNode     <https://node.matchat.org/won/resource> ;
+            msg:hasSentTimestamp "1508511848857" .
+}
+

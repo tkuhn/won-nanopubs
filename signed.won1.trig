@@ -1,0 +1,45 @@
+@prefix this: <http://purl.org/nanopub/temp/6899585108127291000.RAdRDeCgoy9s8AugHbWUGepqR__lzFjV5hPhm8KRjN-X8> .
+@prefix sub: <http://purl.org/nanopub/temp/6899585108127291000.RAdRDeCgoy9s8AugHbWUGepqR__lzFjV5hPhm8KRjN-X8#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix msg: <http://purl.org/webofneeds/message#> .
+@prefix conn: <https://node.matchat.org/won/resource/connection/> .
+@prefix need: <https://node.matchat.org/won/resource/need/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix won: <http://purl.org/webofneeds/model#> .
+@prefix event: <https://node.matchat.org/won/resource/event/> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	event:6899585108127291000 won:hasTextMessage "eigentlich können wir jetzt auch links zu needs auf twitter posten" .
+}
+
+sub:provenance {
+	sub:assertion msg:hasCorrespondingRemoteMessage event:xfj622u3gjoii9uqffmq ;
+		msg:hasPreviousMessage event:z7od6rg2iwhy470tdlps ;
+		msg:hasReceivedTimestamp "1508511850074"^^xsd:long ;
+		msg:protocolVersion "1.0" ;
+		a msg:FromOwner .
+}
+
+sub:pubinfo {
+	sub:signature.MCwCFAdWzkZYJW0m npx:hasPublicKey "MIIBtzCCASwGByqGSM44BAEwggEfAoGBAP1/U4EddRIpUt9KnC7s5Of2EbdSPO9EAMMeP4C2USZpRV1AIlH7WT2NWPq/xfW6MPbLm1Vs14E7gB00b/JmYLdrmVClpJ+f6AR7ECLCT7up1/63xhv4O1fnxqimFQ8E+4P208UewwI1VBNaFpEy9nXzrith1yrv8iIDGZ3RSAHHAhUAl2BQjxUjC8yykrmCouuEC/BYHPUCgYEA9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdRWVeOutRZT+ZxBxCBgLRJFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx+2J6ASQ7zKTxvqhRkImog9/hWuWfBpKLZl6Ae1UlZAFMO/7PSSoDgYQAAoGAEHvFRpU7ryp1gAOi2yoy2VX8jraJdwPo6ZC1idtsGVcmou89Y3KOoJmlW3VU8ZPolpVWuM+EPNmLNFmifYr+svu8AOQkilZBLdkS5BrPVxIpV0dLeaBUroof1wPsVuwEPOdNzWsEmPF1Az8qLGEdPbyn7ehWqO/lNVmW8+c4O2k=" ;
+		npx:hasSignature "MCwCFAdWzkZYJW0miZHj1JKJI5sihOaiAhR/5/vDKWliLy7xKYQw85NGJTV1Xg==" .
+	
+	this: npx:hasSignatureElement sub:signature.MCwCFAdWzkZYJW0m ;
+		msg:hasMessageType msg:ConnectionMessage ;
+		msg:hasReceiver conn:tkxd62psh2jkl1lloa6k ;
+		msg:hasReceiverNeed need:1319679880993162200 ;
+		msg:hasReceiverNode <https://node.matchat.org/won/resource> ;
+		msg:hasSender conn:h2umbn3tuh06stbnfaim ;
+		msg:hasSenderNeed need:8929366644928455000 ;
+		msg:hasSenderNode <https://node.matchat.org/won/resource> ;
+		msg:hasSentTimestamp "1508511848857" ;
+		a msg:FromOwner .
+}
